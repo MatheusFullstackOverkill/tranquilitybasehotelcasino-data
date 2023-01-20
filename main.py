@@ -59,9 +59,9 @@ def hello_pubsub(cloud_event):
       email_file_content = open('admin_email.html', 'r')
       html_content = email_file_content.read()
       email_file_content.close()
-      html_content.replace('email</p>', data['email']+'</p>')
-      html_content.replace('fullname</p>', data['fullname']+'</p>')
-      html_content.replace('message</p>', data['message']+'</p>')
+      html_content = html_content.replace('email</p>', data['email']+'</p>')
+      html_content = html_content.replace('fullname</p>', data['fullname']+'</p>')
+      html_content = html_content.replace('message</p>', data['message']+'</p>')
 
 
       text_part = MIMEText(plain_text, 'plain')
